@@ -1,0 +1,43 @@
+.hero {
+  height: 100vh;
+
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../hero/hero.JPG");
+
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+.hero-content {
+  color: white;
+  margin-top: 100px;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  max-width: 600px;
+}
+
+.hero-link {
+  display: inline-block;
+  padding: 15px 35px;
+  background-color: teal;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.hero-btn:hover {
+  background-color: darkcyan;
+}
+
+.hero-link:hover {
+  background-color: darkcyan;
+}

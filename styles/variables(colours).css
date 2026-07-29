@@ -1,0 +1,9 @@
+:root {
+  --primary-color: teal;
+  --secondary-color: turquoise;
+  --dark-color: #0b3d3d;
+  --light-color: #ffffff;
+  --gray-color: #f8f9fa;
+
+  background-color: var(--primary-color);
+}
