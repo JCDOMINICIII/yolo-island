@@ -85,3 +85,60 @@
   }
 }
 
+/* ROOMS QUERIES */
+.rooms-container {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+}
+
+@media(max-width:1024px){
+
+.rooms-container{
+  grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:768px){
+
+.rooms-container{
+  grid-template-columns:1fr;
+  }
+
+  @media(max-width:768px){
+
+.rooms-hero{
+  height:50vh;
+}
+
+.rooms-hero h1{
+  font-size:2.3rem;
+}
+
+.rooms-hero p{
+  font-size:1rem;
+  padding:0 20px;
+}
+  }
+
+.rooms{
+  padding:60px 5%;
+}
+
+.rooms h2{
+  font-size:2rem;
+  }
+}
+
+@media(max-width:500px){
+
+.room-footer{
+  flex-direction:column;
+  gap:20px;
+  align-items:flex-start;
+  }
+
+.room-image{
+  height:220px;
+  }
+}

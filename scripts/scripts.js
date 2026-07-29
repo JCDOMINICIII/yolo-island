@@ -35,3 +35,36 @@ navbar.classList.remove("scrolled");
 }
 
 });
+
+// Rooms JS
+const roomCards = document.querySelectorAll(".room-card");
+
+
+const roomObserver = new IntersectionObserver((entries)=>{
+
+entries.forEach((entry)=>{
+
+if(entry.isIntersecting){
+
+let index = [...roomCards].indexOf(entry.target);
+
+
+setTimeout(()=>{
+
+entry.target.classList.add("show");
+
+}, index * 200);
+
+
+}
+
+});
+
+});
+
+
+roomCards.forEach(card=>{
+
+roomObserver.observe(card);
+
+});
