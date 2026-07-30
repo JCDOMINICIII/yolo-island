@@ -80,3 +80,8 @@
 .booking-link:hover {
   background-color: white;
 }
+
+a[href^="tel"]{
+  color: white !important;
+  text-decoration: none;
+}
