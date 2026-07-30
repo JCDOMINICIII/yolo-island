@@ -1,5 +1,5 @@
 .hero {
-  height: 100vh;
+ height: 100vh;
 
  display: flex;
  justify-content: center;
@@ -15,7 +15,7 @@
   background-image: url("../images/hero/hero1.JPG");
   background-size: cover;
   background-position: center;
-  transition: opacity 1s ease;
+  transition: opacity 1s ease background-image 1s ease;
 }
 
 .hero-overlay {

@@ -72,11 +72,11 @@ roomObserver.observe(card);
 const heroImage = document.querySelector(".hero-image");
 
 const heroImages = [
-  "images/hero/hero1.jpg",
-  "images/hero/hero2.jpg",
-  "images/hero/hero3.jpg",
-  "images/hero/hero4.jpg",
-  "images/hero/hero5.jpg"
+  "images/hero/hero1.JPG",
+  "images/hero/hero2.JPG",
+  "images/hero/hero3.JPG",
+  "images/hero/hero4.JPG",
+  "images/hero/hero5.JPG"
 ];
 
 
@@ -85,7 +85,7 @@ let currentImage = 0;
 
 setInterval(()=>{
 
-  const heroImage = document.querySelector(".hero");
+  const heroImage = document.querySelector(".hero-image");
     if(heroImage){
 // your hero slider code here
 
@@ -105,13 +105,10 @@ setInterval(()=>{
     `url("${heroImages[currentImage]}")`;
 
 
-    heroImage.style.opacity = 1;
+  },4000);
 
 
-  },1000);
-
-
-},2000);
+},5000);
 
 // ROOMS JS
 
@@ -317,6 +314,7 @@ current = images.length - 1;
 changeImage(current);
 
 });
+
 function startAutoSlide(){
 
 autoSlide = setInterval(()=>{
@@ -374,11 +372,11 @@ carousel.addEventListener("touchstart",()=>{
 stopAutoSlide();
 
 });
-});
-
-
 
 carousel.addEventListener("touchend",()=>{
+  stopAutoSlide();
+});
+
 
 startAutoSlide();
 
