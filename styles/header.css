@@ -22,6 +22,28 @@
   color: white;
 }
 
+.logo a{
+  text-decoration:none;
+  color:white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+  font-weight:bold;
+  font-size:1.8rem;
+}
+
+.brand-main {
+  font-size: 2rem;
+  letter-spacing: 4px;
+  margin-top: 5px;
+  color: turquoise;
+}
+
+.logo span{
+  color:white;
+}
+
 .nav-links {
   display: flex;
   gap: 30px;
@@ -108,4 +130,8 @@
   background-color:#0b3d3d;
   padding:15px 60px;
   transition:0.3s;
+}
+
+.navbar.scrolled .brand-main {
+  color: teal;
 }

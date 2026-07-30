@@ -122,12 +122,22 @@
   }
 
 .rooms{
-  padding:60px 5%;
+  padding:60px 20px;
 }
 
 .rooms h2{
   font-size:2rem;
   }
+
+.room-footer{
+  flex-direction:column;
+  gap:20px;
+  }
+
+.room-btn {
+  width: 100%;
+  text-align: center;
+}
 }
 
 @media(max-width:500px){

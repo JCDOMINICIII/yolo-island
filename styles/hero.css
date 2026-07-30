@@ -1,21 +1,34 @@
 .hero {
   height: 100vh;
 
-  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../hero/hero.JPG");
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+ position: relative;
+ overflow: hidden;
+}
 
+.hero-image {
+  position: absolute;
+  inset: 0;
+  background-image: url("../images/hero/hero1.JPG");
   background-size: cover;
   background-position: center;
+  transition: opacity 1s ease;
+}
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  text-align: center;
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
 }
 
 .hero-content {
   color: white;
   margin-top: 100px;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-content p {
@@ -40,4 +53,8 @@
 
 .hero-link:hover {
   background-color: darkcyan;
+}
+
+.hero {
+  transition: background-image 1s ease-in-out;
 }
