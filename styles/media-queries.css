@@ -152,3 +152,54 @@
   height:220px;
   }
 }
+
+@media(max-width:768px){
+
+.about-hero-content h1{
+
+font-size:2.5rem;
+
+}
+
+.story-content h2,
+.why-us h2,
+.stats h2,
+.team h2,
+.about-cta h2{
+
+font-size:2rem;
+
+}
+
+.about-story{
+
+grid-template-columns:1fr;
+text-align:center;
+
+}
+
+.story-content{
+
+order:2;
+
+}
+
+.story-image{
+
+order:1;
+
+}
+
+.team-card img{
+
+height:260px;
+
+}
+
+.about-cta{
+
+padding:90px 8%;
+
+}
+
+}

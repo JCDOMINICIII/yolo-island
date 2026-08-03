@@ -50,3 +50,39 @@
   line-height: 1.6;
   color: #555;
 }
+
+.feature-card:nth-child(1){
+  transition-delay:.1s;
+}
+
+.feature-card:nth-child(2){
+  transition-delay:.2s;
+}
+
+.feature-card:nth-child(3){
+  transition-delay:.3s;
+}
+
+.feature-card:nth-child(4){
+  transition-delay:.4s;
+}
+
+.feature-card:nth-child(5){
+  transition-delay:.5s;
+}
+
+.feature-card:nth-child(6){
+  transition-delay:.6s;
+}
+
+.feature-card:nth-child(7){
+  transition-delay:.7s;
+}
+
+.feature-card:nth-child(8){
+  transition-delay:.8s;
+}
+
+.feature-card:nth-child(9){
+  transition-delay:.9s;
+}

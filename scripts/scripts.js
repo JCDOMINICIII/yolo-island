@@ -1,27 +1,43 @@
 const menuBtn = document.querySelector(".menu-btn");
 const navLinks = document.querySelector(".nav-links");
 
+if(menuBtn && navLinks){
+
 menuBtn.addEventListener('click', () => {
   menuBtn.classList.toggle('active');
   navLinks.classList.toggle('active');
 });
+}
 
-const hiddenElements = document.querySelectorAll('.feature-card');
-hiddenElements.forEach((card) => {
-  card.classList.add('hidden');
+const hiddenElements = document.querySelectorAll(".feature-card, .hidden");
+
+hiddenElements.forEach((element)=>{
+    element.classList.add("hidden");
 });
 
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    }
-  });
+
+    entries.forEach((entry) => {
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("show");
+
+        }
+
+    });
+
 });
 
-hiddenElements.forEach((card) => observer.observe(card))
+hiddenElements.forEach((element)=>{
+
+    observer.observe(element);
+
+});
 
 const navbar = document.querySelector(".navbar");
+
+if(navbar){
 window.addEventListener("scroll", () => {
 
 if(window.scrollY > 50){
@@ -35,6 +51,7 @@ navbar.classList.remove("scrolled");
 }
 
 });
+}
 
 // Rooms JS
 const roomCards = document.querySelectorAll(".room-card");
@@ -85,7 +102,7 @@ let currentImage = 0;
 
 setInterval(()=>{
 
-  const heroImage = document.querySelector(".hero-image");
+  const hero = document.querySelector(".hero");
     if(heroImage){
 // your hero slider code here
 
@@ -208,9 +225,9 @@ changeImage(index);
 
 });
 
-
+if(dotsContainer){
 dotsContainer.appendChild(dot);
-
+}
 
 });
 
@@ -839,36 +856,25 @@ document.querySelector(".gallery-container");
 
 
 
+if(galleryContainer){
+
 galleryData.forEach(item=>{
 
-
-const galleryItem =
-document.createElement("div");
-
+const galleryItem = document.createElement("div");
 
 galleryItem.classList.add("gallery-item");
 
-
-galleryItem.dataset.category =
-item.category;
-
-
+galleryItem.dataset.category = item.category;
 
 galleryItem.innerHTML = `
-
-<img 
-src="${item.image}"
-alt="${item.alt}"
-loading="lazy">
-
+<img src="${item.image}" alt="${item.alt}">
 `;
-
-
 
 galleryContainer.appendChild(galleryItem);
 
-
 });
+
+}
 
 // GALLERY FILTER
 
@@ -956,11 +962,15 @@ imageArray[galleryIndex].src;
 
 });
 
+if(closeLightbox) {
 closeLightbox.addEventListener("click",()=>{
 
 lightbox.classList.remove("active");
 
 });
+}
+
+if(nextBtn) {
 
 nextBtn.addEventListener("click",()=>{
 
@@ -976,6 +986,9 @@ lightboxImage.src =
 imageArray[galleryIndex].src;
 
 });
+}
+
+if (prevBtn) {
 
 prevBtn.addEventListener("click",()=>{
 
@@ -989,4 +1002,96 @@ imageArray.length - 1;
 
 lightboxImage.src =
 imageArray[galleryIndex].src;
+});
+}
+
+// ABOUT JS
+
+
+// ABOUT COUNTER ANIMATION
+
+// ABOUT COUNTER ANIMATION
+
+const counters = document.querySelectorAll(".counter");
+
+const counterObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+
+            const counter = entry.target;
+            const target = Number(counter.dataset.target);
+
+            let current = 0;
+
+            const updateCounter = () => {
+
+                const increment = Math.ceil(target / 80);
+
+                if(current < target){
+
+                    current += increment;
+
+                    counter.textContent = current;
+
+                    setTimeout(updateCounter, 25);
+
+                } else {
+
+                    counter.textContent = target + "+";
+
+                }
+
+            };
+
+            updateCounter();
+
+            // stop observing after animation starts
+            counterObserver.unobserve(counter);
+
+        }
+
+    });
+
+});
+
+
+counters.forEach(counter => {
+
+    counterObserver.observe(counter);
+
+});
+
+// STATS FADE UP ANIMATION
+
+const stats = document.querySelectorAll(".stat");
+
+
+const statsObserver = new IntersectionObserver((entries)=>{
+
+    entries.forEach((entry,index)=>{
+
+        if(entry.isIntersecting){
+
+            setTimeout(()=>{
+
+                entry.target.classList.add("show");
+
+            }, index * 200);
+
+
+            statsObserver.unobserve(entry.target);
+
+        }
+
+    });
+
+});
+
+
+stats.forEach(stat=>{
+
+    statsObserver.observe(stat);
+
 });
